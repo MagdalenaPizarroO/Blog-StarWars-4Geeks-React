@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			people: {},
 			demo: [
 				{
 					title: "FIRST",
@@ -23,6 +24,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				fetch("https://swapi.dev/api/people/")
+					.then(resp => resp.json())
+					.then(data => {
+						console.log(data);
+						setStore({people:data})
+					}) //función que modifica store: un elemento del objeto y tengo que decirle cuál	
+					.catch((error) => console.log(error));
+
 			},
 			changeColor: (index, color) => {
 				//get the store
