@@ -6,6 +6,16 @@ import { useParams } from "react-router-dom";
 export const CharacterInfo = () => {
     const { store, actions } = useContext(Context)
     const param = useParams()
+
+    const [character, setCharacter] = useState([]);
+    
+    useEffect( () => {
+        fetch(`https://swapi.dev/api/people/${param.id}`)
+            .then(resp => resp.json())
+            .then(data => setCharacter(data)) 
+            .catch((error) => console.log(error));
+    }, [])
+
     return (
         <div className="container-fluid">
 
@@ -16,9 +26,14 @@ export const CharacterInfo = () => {
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text">Last updated 3 mins ago</p>
+                            <h5 className="card-title">Name: {character?.name}</h5>
+                            <p className="card-text">Gender: {character?.gender}</p>
+                            <p className="card-text">Birth year: {character?.birth_year}</p>
+                            <p className="card-text">Height: {character?.height}</p>
+                            <p className="card-text">Mass: {character?.mass}</p>
+                            <p className="card-text">Hair color: {character?.hair_color}</p>
+                            <p className="card-text">Skin color: {character?.skin_color}</p>
+                            <p className="card-text">Eye color: {character?.eye_color}</p>
                         </div>
                     </div>
                 </div>
@@ -26,3 +41,4 @@ export const CharacterInfo = () => {
         </div>
     );
 };
+
