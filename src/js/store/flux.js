@@ -1,7 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: {},
+			peopleUID: {},
+			peopleINFO: {},
 			demo: [
 				{
 					title: "FIRST",
@@ -20,19 +21,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
+			loadPeopleUIDData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
-				fetch("https://swapi.dev/api/people/")
+				fetch("https://swapi.tech/api/people/")
 					.then(resp => resp.json())
-					.then(data => {
-						console.log(data);
-						setStore({people:data})
-					}) //función que modifica store: un elemento del objeto y tengo que decirle cuál	
+					.then(data => setStore({peopleUID:data})) //función que modifica store: un elemento del objeto y tengo que decirle cuál	
 					.catch((error) => console.log(error));
 
 			},
+			loadPeopleINFOData: () => {
+				fetch("https://swapi.dev/api/people/")
+					.then(resp => resp.json())
+					.then(data => setStore({peopleINFO:data})) //función que modifica store: un elemento del objeto y tengo que decirle cuál	
+					.catch((error) => console.log(error));
+
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

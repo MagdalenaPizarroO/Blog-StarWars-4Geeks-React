@@ -1,0 +1,7 @@
+body {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Hubble_ultra_deep_field.jpg");
+    background-size: contain;
+    background-repeat: round;
+    color: rgb(238, 244, 195);
+    font-family: 'Courier New', Courier, monospace;
+  }
