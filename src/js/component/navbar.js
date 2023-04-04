@@ -11,7 +11,7 @@ export const Navbar = () => {
 				</Link>
 				<h1>StarWars BLOG!</h1>
 				<div className="ml-auto">
-				  <Link to="/demo">
+				  <Link to="/favorites">
 					<button className="btn btn-warning">
 					  Favorites
 					</button>

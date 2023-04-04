@@ -7,7 +7,7 @@ export const CharacterInfo = () => {
     const { store, actions } = useContext(Context)
     const param = useParams()
 
-    const [character, setCharacter] = useState([]);
+    const [character, setCharacter] = useState([]); //debería ser un objeto?? o.o
     
     useEffect( () => {
         fetch(`https://swapi.dev/api/people/${param.id}`)
