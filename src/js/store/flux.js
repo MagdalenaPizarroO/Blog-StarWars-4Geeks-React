@@ -3,6 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			peopleUID: {},
 			peopleINFO: {},
+			planetsUID: {},
+			planetsINFO: {},
 			demo: [
 				{
 					title: "FIRST",
@@ -34,7 +36,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadPeopleINFOData: () => {
 				fetch("https://swapi.dev/api/people/")
 					.then(resp => resp.json())
-					.then(data => setStore({peopleINFO:data})) //función que modifica store: un elemento del objeto y tengo que decirle cuál	
+					.then(data => setStore({peopleINFO:data})) 
+					.catch((error) => console.log(error));
+
+			},
+			loadPlanetsUIDData: () => {
+				fetch("https://swapi.tech/api/planets/")
+					.then(resp => resp.json())
+					.then(data => setStore({planetsUID:data})) 
+					.catch((error) => console.log(error));
+
+			},
+			loadPlanetsINFOData: () => {
+				fetch("https://swapi.dev/api/planets/")
+					.then(resp => resp.json())
+					.then(data => setStore({planetsINFO:data}))
 					.catch((error) => console.log(error));
 
 			},

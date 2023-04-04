@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import homeimg from "../../img/homeimg.jpeg"
 import peopleHome from "../../img/peopleHome.jpeg"
+import planetsHome from "../../img/planetsHome.jpeg"
 
 export const Home = () => {
 	const {store, actions} = useContext(Context)
@@ -17,6 +18,10 @@ export const Home = () => {
 			<Link className="col" to="/people">
 				<img src={peopleHome} style={{ width: "300px" , height: "200px"}} />
 				<p>Click here to view characters info</p>
+			</Link>
+			<Link className="col" to="/planets">
+				<img src={planetsHome} style={{ width: "300px" , height: "200px"}} />
+				<p>Click here to view planets info</p>
 			</Link>
 			
 		</div>
