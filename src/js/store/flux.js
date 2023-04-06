@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			peopleINFO: {},
 			planetsUID: {},
 			planetsINFO: {},
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -53,6 +54,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({planetsINFO:data}))
 					.catch((error) => console.log(error));
 
+			},
+			addToFavorites: (character) => {
+				const store = getStore();
+				const favorites = Array.isArray(store.favorites)? [...store.favorites]:[];
+				if (typeof character === "string" && character.trim() !== "" && !favorites.includes(character.trim())) {	//estoy eliminando los espacios vacíos para que no aparezca un elemento vacío en la lista, lo que impide que aparezca el mensaje Add favorites
+					favorites.push(character.trim());
+					setStore({favorites})
+				} 
+			},
+			removeFavories: (index) => {
+				const store = getStore();
+				const filtered = store.favorites.filter((fav, currentIndex) => index !== currentIndex)
+				setStore({favorites:filtered})
 			},
 
 			changeColor: (index, color) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import logoNavbar from "../../img/logoNavbar.png"
 import { Link } from "react-router-dom";
+import { FavoritesDropdown } from "./dropdown";
 
 export const Navbar = () => {
 		return (
@@ -11,11 +12,7 @@ export const Navbar = () => {
 				</Link>
 				<h1>StarWars BLOG!</h1>
 				<div className="ml-auto">
-				  <Link to="/favorites">
-					<button className="btn btn-warning">
-					  Favorites
-					</button>
-				  </Link>
+				  <FavoritesDropdown/>
 				</div>
 			  </div>
 			</nav>
