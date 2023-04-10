@@ -38,7 +38,6 @@ export const CardPlanets = () => {
                 <p>Hola</p>
                 {store.planetsUID.results?.map((planet, index) => {
                     return (
-                        console.log(planet),
                         <div className="col-md-4 mb-4" key={planet.uid}>
                             <div className="card bg-dark border-warning" style={{ width: "18rem" }}>
                                 <img src={`${'https://starwars-visualguide.com/assets/img/planets/'}${planet.uid}${".jpg"}`} className="card-img-top" alt={planet.uid}
