@@ -17,10 +17,10 @@ export const CharacterInfo = () => {
     }, [])
 
     return (
-        <div className="container-fluid">
-
-            <div className="card mb-3 bg-dark border-warning" style={{ maxWidth:"540px" }}>
-                <div className="row g-0">
+        <div className="container-fluid justify-content-center">
+            <div className="row justify-content-center">
+            <div className="card mb-3 bg-dark border-warning justify-content-center" style={{ maxWidth:"540px" }}>
+                <div className="row g-0 ">
                     <div className="col-md-4">
                         <img src={`${'https://starwars-visualguide.com/assets/img/characters/'}${param.id}${".jpg"}`} className="img-fluid rounded-start" alt="..."/>
                     </div>
@@ -37,6 +37,15 @@ export const CharacterInfo = () => {
                         </div>
                     </div>
                 </div>
+                </div>
+            </div>
+                <div className=" d-flex justify-content-evenly">
+                <Link to={"/"} className="">
+                    <button className="btn btn-outline-warning ">Back Home</button>
+                </Link>
+                <Link to={"/people"} className="">
+                    <button className="btn btn-outline-warning ">Back to characters</button>
+                </Link>
             </div>
         </div>
     );

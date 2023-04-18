@@ -10,16 +10,16 @@ export const Home = () => {
 	const {store, actions} = useContext(Context)
 	return (
 		<div className="container text-center mt-5" >
-		<h1>StarWars BLOG!</h1>
+		<h1>Welcome to the BEST StarWars BLOG!</h1>
 		<p>
 			<img src={homeimg} style={{ width: "700px" }} />
 		</p>
 		<div className="row">
-			<Link className="col" to="/people">
+			<Link className="col link-no-underline" to="/people">
 				<img src={peopleHome} style={{ width: "300px" , height: "200px"}} />
 				<p>Click here to view characters info</p>
 			</Link>
-			<Link className="col" to="/planets">
+			<Link className="col link-no-underline" to="/planets">
 				<img src={planetsHome} style={{ width: "300px" , height: "200px"}} />
 				<p>Click here to view planets info</p>
 			</Link>

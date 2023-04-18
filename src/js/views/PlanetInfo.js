@@ -29,7 +29,6 @@ export const PlanetInfo = () => {
     return (
         <div className="container-fluid  justify-content-center">
             <div className="row justify-content-center">
-
                 <div className="card mb-3 bg-dark border-warning" style={{ maxWidth: "540px" }}>
                     <div className="row g-0 ">
                         <div className="col-md-4">
@@ -43,19 +42,26 @@ export const PlanetInfo = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Name: {planet?.name}</h5>
                                 <p className="card-text">Climate: {planet?.climate}</p>
+                                <p className="card-text">Rotation period: {planet?.rotation_period}</p>
+                                <p className="card-text">Orbital period: {planet?.orbital_period}</p>
+                                <p className="card-text">Diameter: {planet?.diameter}</p>
+                                <p className="card-text">Gravity: {planet?.gravity}</p>
+                                <p className="card-text">Population: {planet?.population}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="row justify-content-center">
-                hola
-            <Link to={"/planets"} className="col justify-content-center">
-                    <button className="btn btn-outline-warning ">Go Back</button>
+            <div className=" d-flex justify-content-evenly">
+                <Link to={"/"} className="">
+                    <button className="btn btn-outline-warning ">Back Home</button>
+                </Link>
+                <Link to={"/planets"} className="">
+                    <button className="btn btn-outline-warning ">Back to planets</button>
                 </Link>
             </div>
-                
-            
+
+
         </div>
     )
 }

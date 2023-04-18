@@ -21,7 +21,7 @@ export const FavoritesDropdown = () => {
                             </li>
                         );
                     })
-                ) : (<li className="dropdown-item">Add favorites here</li>)
+                ) : (<li className="dropdown-item">Click on the ♥︎ to add favorites!</li>)
                 }               
             </ul>
         </div>

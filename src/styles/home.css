@@ -4,4 +4,31 @@ body {
     background-repeat: round;
     color: rgb(238, 244, 195);
     font-family: 'Courier New', Courier, monospace;
+
+    
   }
+ 
+  .nav-link{
+    text-decoration: none;
+    color: white;
+  }
+
+  .link-no-underline {
+    text-decoration: none;
+    color: white;
+}
+
+.link-no-underline:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.link-magdis {
+  text-decoration: none;
+  color: rgb(255, 54, 87)
+}
+
+.link-magdis:hover {
+  text-decoration: none;
+  color: rgb(232, 23, 58)
+}

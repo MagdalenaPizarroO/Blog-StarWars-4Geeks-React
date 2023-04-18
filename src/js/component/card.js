@@ -35,7 +35,6 @@ export const CardPlanets = () => {
     return (
         <div className="container-fluid">
             <div className="row">
-                <p>Hola</p>
                 {store.planetsUID.results?.map((planet, index) => {
                     return (
                         <div className="col-md-4 mb-4" key={planet.uid}>
@@ -50,6 +49,7 @@ export const CardPlanets = () => {
                                     <Link to={"/planet/" + planet.uid}>
                                         <button className="btn btn-outline-warning">More info</button>
                                     </Link>
+                                    <button className="btn btn-dark" onClick={() => actions.addToFavorites(planet.name)}><i className="text-danger fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
